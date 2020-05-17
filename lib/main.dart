@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import 'counter.dart';
 import 'image_carousel.dart';
 
 void main() {
@@ -73,27 +74,35 @@ class FirstScreen extends StatelessWidget {
                     topRight: const Radius.circular(50.0),
                   )),
               height: 500.0,
+              width: 500.0,
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Text(
+                        'Mango',
+                        style: TextStyle(
+                            fontSize: 30.0, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text('1 each'),
+                      CounterDesign(),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ],
         ),
       ),
     );
   }
-
-//  Widget getSlider() {
-//    final List<String> imgList = [
-//      "images/bananas.png",
-//      "images/mango2.png",
-//      "images/more apple.png"
-//    ];
-//
-//    return Container(
-//        child: CarouselSlider(
-//      options: CarouselOptions(),
-//      items: imgList
-//          .map((item) => Container(
-//                child: Center(child: Image.asset(item.toString())),
-//              ))
-//          .toList(),
-//    ));
 }
