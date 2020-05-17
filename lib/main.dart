@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
+import 'image_carousel.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -14,32 +17,53 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.yellow.shade700,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-//          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.end,
-
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Align(
-                alignment: Alignment.bottomLeft,
-                child: Container(
-                  child: Image.asset(
-                    'images/icons8-back-24.png',
-                    height: 10.0,
-                  ),
-                  height: 50.0,
-                  width: 50.0,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15.0)),
-                ),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.green.shade100,
+          leading: Row(
+            children: <Widget>[
+              SizedBox(
+                width: 5.0,
               ),
+              Container(
+                child: IconButton(
+                  color: Colors.black,
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                  ),
+                  tooltip: 'Next page',
+                  onPressed: () {},
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              )
+            ],
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.filter_list,
+                color: Colors.white,
+                size: 50.0,
+              ),
+              onPressed: () {},
             ),
             SizedBox(
-              height: 250.0,
+              width: 20.0,
+            ),
+          ],
+        ),
+        backgroundColor: Colors.green.shade100,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            CarouselWithIndicatorDemo(),
+            SizedBox(
+              height: 50.0,
             ),
             Container(
               decoration: BoxDecoration(
@@ -55,4 +79,21 @@ class FirstScreen extends StatelessWidget {
       ),
     );
   }
+
+//  Widget getSlider() {
+//    final List<String> imgList = [
+//      "images/bananas.png",
+//      "images/mango2.png",
+//      "images/more apple.png"
+//    ];
+//
+//    return Container(
+//        child: CarouselSlider(
+//      options: CarouselOptions(),
+//      items: imgList
+//          .map((item) => Container(
+//                child: Center(child: Image.asset(item.toString())),
+//              ))
+//          .toList(),
+//    ));
 }
