@@ -9,9 +9,11 @@ class CounterDesign extends StatefulWidget {
 
 class _CounterDesign extends State<CounterDesign> {
   int _n = 0;
+  int _amt = 0;
   void add() {
     setState(() {
       _n++;
+      _amt = _amt + 10;
     });
   }
 
@@ -23,41 +25,60 @@ class _CounterDesign extends State<CounterDesign> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey.shade500,
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      width: 140.0,
-      child: Row(
-        children: <Widget>[
-          new IconButton(
-            icon: const Icon(
-              Icons.add,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              add();
-            },
+    return Row(
+      children: <Widget>[
+        Container(
+          width: 155.0,
+          decoration: BoxDecoration(
+            color: Colors.grey.shade500,
+            borderRadius: BorderRadius.circular(20.0),
           ),
-          SizedBox(
-            width: 10.0,
+//      width: 140.0,
+          child: Row(
+            children: <Widget>[
+              new IconButton(
+                icon: const Icon(
+                  Icons.add,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  add();
+                },
+              ),
+              SizedBox(
+                width: 10.0,
+              ),
+              new Text('$_n', style: new TextStyle(fontSize: 30.0)),
+              SizedBox(
+                width: 10.0,
+              ),
+              new IconButton(
+                icon: const Icon(
+                  Icons.remove,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  minus();
+                },
+              ),
+              SizedBox(
+                width: 20.0,
+              ),
+            ],
           ),
-          new Text('$_n', style: new TextStyle(fontSize: 30.0)),
-          SizedBox(
-            width: 10.0,
+        ),
+        SizedBox(
+          width: 140.0,
+        ),
+        Container(
+            child: Text(
+          'Rs $_amt',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30.0,
           ),
-          new IconButton(
-            icon: const Icon(
-              Icons.remove,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              minus();
-            },
-          ),
-        ],
-      ),
+        )),
+      ],
     );
   }
 }

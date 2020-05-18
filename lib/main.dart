@@ -94,6 +94,9 @@ class FirstScreen extends StatelessWidget {
                         height: 10.0,
                       ),
                       Text('1 each'),
+                      SizedBox(
+                        height: 20.0,
+                      ),
                       CounterDesign(),
                     ],
                   ),
