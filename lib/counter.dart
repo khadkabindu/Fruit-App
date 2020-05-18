@@ -20,6 +20,7 @@ class _CounterDesign extends State<CounterDesign> {
   void minus() {
     setState(() {
       if (_n != 0) _n--;
+      _amt = _amt - 10;
     });
   }
 
@@ -30,7 +31,7 @@ class _CounterDesign extends State<CounterDesign> {
         Container(
           width: 155.0,
           decoration: BoxDecoration(
-            color: Colors.grey.shade500,
+            color: Colors.blueGrey[50],
             borderRadius: BorderRadius.circular(20.0),
           ),
 //      width: 140.0,
@@ -68,7 +69,7 @@ class _CounterDesign extends State<CounterDesign> {
           ),
         ),
         SizedBox(
-          width: 140.0,
+          width: 100.0,
         ),
         Container(
             child: Text(
