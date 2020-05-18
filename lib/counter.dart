@@ -24,16 +24,21 @@ class _CounterDesign extends State<CounterDesign> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.shade500,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      width: 140.0,
       child: Row(
         children: <Widget>[
-          new FloatingActionButton(
-            onPressed: add,
-            child: new Icon(
+          new IconButton(
+            icon: const Icon(
               Icons.add,
               color: Colors.black,
             ),
-            backgroundColor: Colors.white,
-            elevation: 0.0,
+            onPressed: () {
+              add();
+            },
           ),
           SizedBox(
             width: 10.0,
@@ -42,12 +47,14 @@ class _CounterDesign extends State<CounterDesign> {
           SizedBox(
             width: 10.0,
           ),
-          new FloatingActionButton(
-            onPressed: minus,
-            child: new Icon(const IconData(0xe15b, fontFamily: 'MaterialIcons'),
-                color: Colors.black),
-            backgroundColor: Colors.white,
-            elevation: 0.0,
+          new IconButton(
+            icon: const Icon(
+              Icons.remove,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              minus();
+            },
           ),
         ],
       ),
