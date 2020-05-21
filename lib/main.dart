@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'counter.dart';
+import 'homeScreen.dart';
 import 'image_carousel.dart';
 
 void main() {
-  runApp(FirstScreen());
+  runApp(MaterialApp(initialRoute: '/', routes: {
+    '/': (context) => HomeScreen(),
+    '/second': (context) => FirstScreen(),
+  }));
 }
 
 class FirstScreen extends StatefulWidget {
@@ -40,7 +44,6 @@ class _FirstScreen extends State<FirstScreen> {
                 color: Colors.white,
                 icon: const Icon(
                   Icons.arrow_back,
-                  size: 40.0,
                 ),
                 onPressed: () {},
               ),
@@ -51,7 +54,6 @@ class _FirstScreen extends State<FirstScreen> {
               icon: const Icon(
                 Icons.shopping_cart,
                 color: Colors.white,
-                size: 40.0,
               ),
               onPressed: () {},
             ),
@@ -141,11 +143,11 @@ class _FirstScreen extends State<FirstScreen> {
                                       icon: _isFavorited
                                           ? Icon(
                                               Icons.favorite_border,
-                                              color: Colors.orange,
+                                              color: Colors.amber[300],
                                             )
                                           : Icon(
                                               Icons.favorite,
-                                              color: Colors.orange,
+                                              color: Colors.amber[300],
                                             )),
                                   onPressed: _toggleFavorite,
                                 ),

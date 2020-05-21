@@ -34,7 +34,6 @@ class _CounterDesign extends State<CounterDesign> {
             color: Colors.blueGrey[50],
             borderRadius: BorderRadius.circular(20.0),
           ),
-//      width: 140.0,
           child: Row(
             children: <Widget>[
               new IconButton(
