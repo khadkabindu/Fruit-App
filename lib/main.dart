@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-
 import 'counter.dart';
-import 'homeScreen.dart';
 import 'image_carousel.dart';
 
 void main() {
-  runApp(MaterialApp(initialRoute: '/', routes: {
-    '/': (context) => HomeScreen(),
-    '/second': (context) => FirstScreen(),
-  }));
+  runApp(FirstScreen());
 }
 
 class FirstScreen extends StatefulWidget {
@@ -81,8 +75,8 @@ class _FirstScreen extends State<FirstScreen> {
                         topLeft: const Radius.circular(50.0),
                         topRight: const Radius.circular(50.0),
                       )),
-                  height: 500.0,
-                  width: 500.0,
+                  height: 600,
+                  width: 500,
                   child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Padding(
